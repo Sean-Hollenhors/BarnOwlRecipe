@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vibe App Recipe Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='styles.css'>
+    </link>
+
+    <script>
+        function myFunction() {
+
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+
+
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <h1>Recipe</h>
+
+        <img src="icons8-kawaii_noodle.svg" class="img1"></img>
+
+        <img src="icons8-kawaii_croissant.svg" class="img2"></img>
+
+
+
+</body>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for recipes...">
+
+<ul id="myUL">
+    <li><a href="#">Ingredients</a></li>
+    <li><a href="#">Region</a></li>
+
+    <li><a href="#">Delivery</a></li>
+
+</ul>
+
+
+
+
+
+</html>
